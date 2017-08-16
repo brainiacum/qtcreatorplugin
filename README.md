@@ -18,4 +18,5 @@ Important Notes: You need to build QtCreator from scratch to be able to build pl
 Example:  
  
 `    postfix notation	<=>   infix notation`
+
 `    2 2 + 6 * 3 / 8 - 	<=> (2 + 2) * 6 / 3 - 8`
