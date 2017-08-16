@@ -21,4 +21,4 @@ Example:
 
 `    2 2 + 6 * 3 / 8 - 	<=> (2 + 2) * 6 / 3 - 8`
 
-If you have any questions feel free to ask us imediatlly.
+If you have any questions feel free to ask us immediately.
