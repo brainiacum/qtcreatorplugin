@@ -4,13 +4,13 @@
 * (http://opensource.org/licenses/MIT)
 */
 
-#ifndef NOTATIONCONVERTERCORE_H
-#define NOTATIONCONVERTERCORE_H
+#pragma once
 
 #include <QMap>
 #include <QString>
 
 namespace NotationConverter {
+namespace Internal {
 /**
  * @brief Object that can be used as specification for operations.
  * @param operandsCount is a count of operands in the notation of operation.
@@ -21,19 +21,27 @@ namespace NotationConverter {
  * @param inParenthesis is an indication that notation should be placed in parentheses.
  * @param description is a string of operation description.
  */
-struct Operation {
+struct Operation
+{
     uint operandsCount;
     QString notation;
-    bool inParenthesis;
+    bool inParentheses;
     QString description;
 };
 
-enum ConversionResult : quint8 { FailureConversion, SuccessConversion, EmptyNotation };
+enum ConversionResult : quint8
+{
+    FailureConversion,
+    SuccessConversion,
+    EmptyNotation
+};
 
 /**
  * @brief PostfixToInfix conversion algorithm.
  */
-struct PostfixToInfix {
+class PostfixToInfix
+{
+public:
     static QMap<QString, Operation> const defaultOperations;
     QMap<QString, Operation> customOperations;
 
@@ -45,5 +53,6 @@ struct PostfixToInfix {
      */
     ConversionResult convert(QString &postfixNotation) const;
 };
-}
-#endif // NOTATIONCONVERTERCORE_H
+
+} // namespace Internal
+} // namespace NotationConverter
