@@ -2,7 +2,7 @@
 
 `Copyright (c) 2017 Vitali Parkhomenko`
 
-`This code is licensed under the MIT license (MIT)`
+`This text is licensed under the MIT license (MIT)`
 
 `(http://opensource.org/licenses/MIT)`
 

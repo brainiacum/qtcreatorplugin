@@ -7,7 +7,9 @@
 #pragma once
 
 #include "notationconverter_global.h"
+
 #include <extensionsystem/iplugin.h>
+
 #include <functional>
 
 namespace Core {
@@ -18,6 +20,7 @@ namespace TextEditor {class TextEditorWidget;}
 
 namespace NotationConverter {
 namespace Internal {
+class PostfixToInfix;
 
 class NotationConverterPlugin : public ExtensionSystem::IPlugin
 {
@@ -26,11 +29,11 @@ class NotationConverterPlugin : public ExtensionSystem::IPlugin
 
 public:
     NotationConverterPlugin();
-    ~NotationConverterPlugin();
+    ~NotationConverterPlugin() override;
 
     bool initialize(const QStringList &arguments, QString *errorString);
     void extensionsInitialized();
-    ShutdownFlag aboutToShutdown();
+    ShutdownFlag aboutToShutdown() override;
 
 public slots:
     void convertPostfixToInfixCurrentFile();
@@ -38,8 +41,8 @@ public slots:
     void changedCurrentEditor(Core::IEditor *editor);
 
 private:
-    std::function<void(bool)> activateToolBarActions;
+    std::function<void(bool)> m_setEnableConversion;
+    PostfixToInfix *m_postfixToInfix = nullptr;
 };
-
 } // namespace Internal
 } // namespace NotationConverter

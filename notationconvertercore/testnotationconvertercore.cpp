@@ -4,10 +4,11 @@
 * (http://opensource.org/licenses/MIT)
 */
 
-#include <QtTest/QtTest>
 #include "notationconvertercore.h"
 
-using namespace NotationConverter;
+#include <QtTest/QtTest>
+
+using namespace NotationConverter::Internal;
 
 Q_DECLARE_METATYPE(ConversionResult)
 
